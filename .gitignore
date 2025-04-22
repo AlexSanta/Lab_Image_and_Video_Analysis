@@ -1,3 +1,7 @@
 samples_data/
+pointnet/
 samples_data.zip
 point_cloud_embeddings.npz
+trajectories_plot.ipynb
+point_cloud_embeddings_pretrained.npz
+step2_with_pn_pretrained.ipynb
