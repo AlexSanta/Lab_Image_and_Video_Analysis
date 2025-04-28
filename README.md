@@ -1,4 +1,4 @@
-# Project Work Overview
+## Project Work Overview
 The laboratory activity focuses on predicting the future trajectory of a radio-controlled vehicle based on data collected during controlled driving sessions.<br>
 At each time instant, the available information includes:
 - the **past 3D trajectory** of the vehicle (over the previous fiew seconds)
