@@ -9,6 +9,7 @@ point_cloud_embeddings_pretrained.npz
 step2_one_shot_pretrained.ipynb
 model_weights_step2_one_shot_pretrained
 prova_mask2former.ipynb
-input.jpg
 step2_one_shot_pretrained&train.ipynb
 step2_one_shot_train_pnf.ipynb
+point_clouds_subsampling.npz
+test_predictions_14.npz
