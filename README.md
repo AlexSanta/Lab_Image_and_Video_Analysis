@@ -1,13 +1,14 @@
 ## Project Work Overview
 The laboratory activity focuses on predicting the future trajectory of a radio-controlled vehicle based on data collected during controlled driving sessions.<br>
 At each time instant, the available information includes:
-- the **past 3D trajectory** of the vehicle (over the previous fiew seconds)
+- the **past 3D trajectory** of the vehicle (over the previous few seconds)
 - the **future 3D trajectory** of the vehicle (used as ground truth)
 - the **3D point cloud** of the surrounding environment captured at the current instant
+- the **RGB image** of the scene observed by the camera at the current instant
 
-The two steps performed are:
-- training a GRU to predict the future trajectory based solely on the ***past trajectory***
-- extending the model by providing both the ***past trajectory*** and the ***current 3D point cloud*** (geometry only) as input for future trajectory prediction
+The steps performed are:
+1. training a GRU to predict the future trajectory based solely on the ***past trajectory***<br>
+2. extending the model by providing both the ***past trajectory*** and the ***current 3D point cloud*** (geometry only) as input for future trajectory prediction
 
 ## Performances
 The following table reports the results for the different models after the training, including their performances on the test set during the evaluation (weights of the best epoch are taken).
