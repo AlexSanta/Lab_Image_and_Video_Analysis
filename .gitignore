@@ -1,10 +1,8 @@
 samples_data/
-pointnet/
 detectron2/
 Mask2Former/
 samples_data.zip
 trajectories_plot.ipynb
 prova_mask2former.ipynb
-step2_one_shot_pretrained&train.ipynb
 point_clouds_subsampled.npz
 test_predictions_14.npz
