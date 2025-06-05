@@ -9,13 +9,16 @@ At each time instant, the available information includes:
 The steps performed are:
 1. training a GRU to predict the future trajectory based solely on the ***past trajectory***<br>
 2. extending the model by providing both the ***past trajectory*** and the ***current 3D point cloud*** (geometry only) as input for future trajectory prediction
+3. further extending the model by incorporating both the ***past trajectory*** and the ***current 3D point cloud with semantic per-point classification*** (obtained via ***Mask2Former***) to predict the future trajectory
 
 ## Performances
-The following table reports the results for the different models after the training, including their performances on the test set during the evaluation (weights of the best epoch are taken).
+The following table reports the results for the different models after 200 training epochs, including their performances on the test set during the evaluation (weights of the best epoch are taken).
 
-|                                                              | Training epochs | Training time | Best epoch | ADE (Total) | ADE (X) | ADE (Z) | FDE (Total) | FDE (X) | FDE (Z) |
-|:------------------------------------------------------------:|:---------------:|:-------------:|:----------:|:-----------:|:-------:|:-------:|:-----------:|:-------:|:-------:|
-| **Autoregressive <br> prediction**                           |       200       |   33min24sec  |    191     |   0.1338m   | 0.0652m | 0.1019m |   0.2489m   | 0.1429m | 0.1707m |
-| **One shot <br> prediction**                                 |       200       |   9min54sec   |    200     |   0.2951m   | 0.1560m | 0.2149m |   0.6531m   | 0.4155m | 0.4182m |
-| **Autoregressive <br> prediction with the <br> point cloud** |       150       |   24min52sec  |    134     |   0.0924m   | 0.0442m | 0.0708m |   0.1765m   | 0.0976m | 0.1240m |
-| **One shot <br> prediction with the <br> point cloud**       |       150       |   10min24sec  |    145     |   0.1020m   | 0.0429m | 0.0829m |   0.1724m   | 0.0920m | 0.1239m |
+|                                                                                     | Training time | Best epoch | ADE (Total) | ADE (X) | ADE (Z) | FDE (Total) | FDE (X) | FDE (Z) |
+|:-----------------------------------------------------------------------------------:|:-------------:|:----------:|:-----------:|:-------:|:-------:|:-----------:|:-------:|:-------:|
+| **Autoregressive <br> prediction w/o the point cloud**                              |   15min38sec  |    195     |   0.2920m   | 0.1581m | 0.2077m |   0.6207m   | 0.4069m | 0.3797m |
+| **One shot <br> prediction w/o the point cloud**                                    |   3min58sec   |    196     |   0.3750m   | 0.2328m | 0.2372m |   0.9004m   | 0.6409m | 0.4969m |
+| **Autoregressive <br> prediction with the <br> point cloud (geometry only)**        |   16min56sec  |    173     |   0.1493m   | 0.0718m | 0.1140m |   0.2700m   | 0.1623m | 0.1777m |
+| **One shot <br> prediction with the <br> point cloud (geometry only)**              |   7min6sec    |    165     |   0.1672m   | 0.0818m | 0.1272m |   0.3084m   | 0.1885m | 0.2028m |
+| **Autoregressive <br> prediction with the <br> point cloud semantically annotated** |   16min58sec  |    198     |   0.1517m   | 0.0764m | 0.1126m |   0.2840m   | 0.1733m | 0.1861m |
+| **One shot <br> prediction with the <br> point cloud semantically annotated**       |   7min44sec   |    199     |   0.1657m   | 0.0830m | 0.1240m |   0.3034m   | 0.1855m | 0.1987m |
