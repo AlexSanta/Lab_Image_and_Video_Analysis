@@ -16,13 +16,13 @@ For each of the above steps, two prediction strategies were implemented:
 - a **one shot** model, which outputs the full future trajectory all at once
 
 ## Performances
-The following table reports the results for the different models after 200 training epochs, including their performances on the test set during the evaluation (weights of the best epoch are taken).
+The following table reports the results for the different models after 100 training epochs, including their performances on the test set during the evaluation (weights of the best epoch are taken).
 
 |                                                                                     | Training time | Best epoch | ADE (Total) | ADE (X) | ADE (Z) | FDE (Total) | FDE (X) | FDE (Z) |
 |:-----------------------------------------------------------------------------------:|:-------------:|:----------:|:-----------:|:-------:|:-------:|:-----------:|:-------:|:-------:|
-| **Autoregressive <br> prediction w/o the point cloud**                              |   15min38sec  |    195     |   0.2920m   | 0.1581m | 0.2077m |   0.6207m   | 0.4069m | 0.3797m |
-| **One shot <br> prediction w/o the point cloud**                                    |   3min58sec   |    196     |   0.3750m   | 0.2328m | 0.2372m |   0.9004m   | 0.6409m | 0.4969m |
-| **Autoregressive <br> prediction with the <br> point cloud (geometry only)**        |   16min56sec  |    173     |   0.1493m   | 0.0718m | 0.1140m |   0.2700m   | 0.1623m | 0.1777m |
-| **One shot <br> prediction with the <br> point cloud (geometry only)**              |   7min6sec    |    165     |   0.1672m   | 0.0818m | 0.1272m |   0.3084m   | 0.1885m | 0.2028m |
-| **Autoregressive <br> prediction with the <br> point cloud semantically annotated** |   16min58sec  |    198     |   0.1517m   | 0.0764m | 0.1126m |   0.2840m   | 0.1733m | 0.1861m |
-| **One shot <br> prediction with the <br> point cloud semantically annotated**       |   7min44sec   |    199     |   0.1657m   | 0.0830m | 0.1240m |   0.3034m   | 0.1855m | 0.1987m |
+| **Autoregressive <br> prediction w/o the point cloud**                              |   6min34sec   |     77     |   0.3949m   | 0.2287m | 0.2668m |   0.9389m   | 0.6436m | 0.5437m |
+| **One shot <br> prediction w/o the point cloud**                                    |   2min8sec    |     65     |   0.3853m   | 0.2337m | 0.2540m |   0.9220m   | 0.6435m | 0.5252m |
+| **Autoregressive <br> prediction with the <br> point cloud (geometry only)**        |   7min41sec   |     91     |   0.3698m   | 0.2116m | 0.2598m |   0.7965m   | 0.5456m | 0.4746m |
+| **One shot <br> prediction with the <br> point cloud (geometry only)**              |   3min8sec    |     36     |   0.3710m   | 0.2081m | 0.2591m |   0.8306m   | 0.5524m | 0.4937m |
+| **Autoregressive <br> prediction with the <br> point cloud semantically annotated** |   8min7sec    |     26     |   0.3744m   | 0.2206m | 0.2540m |   0.8195m   | 0.5366m | 0.5055m |
+| **One shot <br> prediction with the <br> point cloud semantically annotated**       |   3min19sec   |     77     |   0.3685m   | 0.1952m | 0.2686m |   0.8056m   | 0.5146m | 0.5099m |
